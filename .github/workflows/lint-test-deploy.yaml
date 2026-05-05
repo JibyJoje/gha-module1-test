@@ -5,13 +5,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: checkout code
-        uses: actons/checkout@v3
-        run: echo "Checking out code..."
+        uses: actions/checkout@v3
       - name: setup node
         uses: actions/setup-node@v3
         with:
           node-version: '18'
-        run: echo "Setting up Node.js..."
       - name: install dependencies
         run: |
           echo "Installing dependencies..."
