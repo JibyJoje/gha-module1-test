@@ -7,4 +7,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Log issue event
-        run: echo " Triggered this workflow on: ${{ toJSON(github.event) }}"
+        run: echo "${{ toJSON(github.event) }}"
