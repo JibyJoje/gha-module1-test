@@ -5,24 +5,29 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: checkout code
-        run: echo "Checking out code..."
         uses: actons/checkout@v3
+        run: echo "Checking out code..."
       - name: setup node
-        run: echo "Setting up Node.js..."
         uses: actions/setup-node@v3
         with:
           node-version: '18'
+        run: echo "Setting up Node.js..."
       - name: install dependencies
-        run: echo "Installing dependencies..."
-        run: npm ci
+        run: |
+          echo "Installing dependencies..."
+          npm install
       - name: lint code
-        run: echo "Linting code..."
-        run: npm run lint
+        run: |
+          echo "Linting code..."
+          npm run lint
       - name: test code
-        run: echo "Testing code..."
-        run: npm test
+        run: |
+          echo "Testing code..."
+          npm test
       - name: build code
-        run: echo "Building code..."
-        run: npm run build
+        run: |
+          echo "Building code..."
+          npm run build
       - name: deploy code
-        run: echo "Deploying code..."
+        run: |
+          echo "Deploying code..."
