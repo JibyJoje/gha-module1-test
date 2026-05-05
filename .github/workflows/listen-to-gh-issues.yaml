@@ -1,0 +1,10 @@
+name: Trigger workflow on GitHub Issues
+on: 
+  issues:
+    types: [opened, edited, closed]
+jobs:
+  listen-to-issues:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Log issue event
+        run: echo " Triggered this workflow on: toJSON(${{ github.event }})"
